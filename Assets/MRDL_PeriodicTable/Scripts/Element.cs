@@ -52,6 +52,13 @@ namespace HoloToolkit.MRDL.PeriodicTable
             ActiveElement = null;
         }
 
+        public void ReturnElementDetails()
+        {
+            Debug.Log("DataAtomicNumber " + DataAtomicNumber.text.ToString());
+            Debug.Log("ElementName " + ElementName.text.ToString());
+            Debug.Log("ElementNameDetail " + ElementNameDetail.text.ToString());
+        }
+
         public void Start()
         {
             // Turn off our animator until it's needed
@@ -181,4 +188,7 @@ namespace HoloToolkit.MRDL.PeriodicTable
             transform.parent.name = data.name;
         }
     }
+
+
+    
 }
