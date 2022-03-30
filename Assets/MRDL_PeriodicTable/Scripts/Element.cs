@@ -54,9 +54,9 @@ namespace HoloToolkit.MRDL.PeriodicTable
 
         public void ReturnElementDetails()
         {
-            Debug.Log("DataAtomicNumber " + DataAtomicNumber.text.ToString());
-            Debug.Log("ElementName " + ElementName.text.ToString());
-            Debug.Log("ElementNameDetail " + ElementNameDetail.text.ToString());
+            UIManager.Instance.returnedElementNumber = DataAtomicNumber.text.ToString();
+            UIManager.Instance.returnedElementShortForm = ElementName.text.ToString();
+            UIManager.Instance.returnedElementName = ElementNameDetail.text.ToString();
         }
 
         public void Start()

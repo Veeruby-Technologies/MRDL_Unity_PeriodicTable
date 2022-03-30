@@ -12,6 +12,11 @@ public class UIManager : MonoBehaviour
 
     public bool isGameRunning;
 
+    public string returnedElementName;
+    public string returnedElementNumber;
+    public string returnedElementShortForm;
+
+
     public void Awake()
     {
         if (Instance == null)
@@ -21,6 +26,7 @@ public class UIManager : MonoBehaviour
 
         timer = GetComponent<Timer>();
     }
+
 
     public void StartGame()
     {
@@ -38,5 +44,14 @@ public class UIManager : MonoBehaviour
         timer.StopTimer();
     }
 
+    public void AddScore()
+    {
+        timer.score = timer.score + 100;
+    }
+
+    public void SubtractScore()
+    {
+        timer.score = timer.score - 50;
+    }
 
 }
