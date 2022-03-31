@@ -69,6 +69,20 @@ public class UIManager : MonoBehaviour
         }
         elementList.Clear();
         periodicTableLoader.InitializeData();
+
+        GameObject[] tempWrongObjects = GameObject.FindGameObjectsWithTag("wrong");
+
+        foreach (GameObject tempWrongObject in tempWrongObjects)
+        {
+            tempWrongObject.SetActive(false);
+        }
+
+        GameObject[] tempCorrectObjects = GameObject.FindGameObjectsWithTag("correct");
+
+        foreach (GameObject tempCorrectObject in tempCorrectObjects)
+        {
+            tempCorrectObject.SetActive(false);
+        }
     }
 
     public void GetQuestion()

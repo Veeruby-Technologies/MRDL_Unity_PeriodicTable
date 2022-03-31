@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ElementButton
+  - SceneObject
+  - correct
+  - wrong
   layers:
   - Default
   - TransparentFX

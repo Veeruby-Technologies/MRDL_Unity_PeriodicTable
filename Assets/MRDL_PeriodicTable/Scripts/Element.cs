@@ -41,6 +41,9 @@ namespace HoloToolkit.MRDL.PeriodicTable
         private Material clearMaterial;
         private PresentToPlayer present;
 
+        [SerializeField]
+        private Material correctAnswerMaterial;
+
         public void SetActiveElement()
         {
             Element element = gameObject.GetComponent<Element>();
@@ -66,6 +69,13 @@ namespace HoloToolkit.MRDL.PeriodicTable
                 UIManager.Instance.resultUIText.text = "Correct! +100";
                 UIManager.Instance.resultUIText.color = Color.green;
                 UIManager.Instance.PopUpResult();
+                gameObject.transform.Find("Panel Front Correct").gameObject.SetActive(true);
+                GameObject[] tempWrongObjects = GameObject.FindGameObjectsWithTag("wrong");
+
+                foreach (GameObject tempWrongObject in tempWrongObjects)
+                {
+                    tempWrongObject.SetActive(false);
+                }
             }
 
             else
@@ -74,6 +84,7 @@ namespace HoloToolkit.MRDL.PeriodicTable
                 UIManager.Instance.resultUIText.text = "InCorrect! -50";
                 UIManager.Instance.resultUIText.color = Color.red;
                 UIManager.Instance.PopUpResult();
+                gameObject.transform.Find("Panel Front Wrong").gameObject.SetActive(true);
             }
         }
 
