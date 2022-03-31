@@ -1,6 +1,9 @@
+using HoloToolkit.MRDL.PeriodicTable;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +18,21 @@ public class UIManager : MonoBehaviour
     public string returnedElementName;
     public string returnedElementNumber;
     public string returnedElementShortForm;
+
+    public List<string> elementList = new List<string>();
+
+    public string question;
+    public int questionNumber;
+
+    public TextMeshPro questionUI;
+
+    public TextMeshPro resultUIText;
+    public GameObject resultUI;
+
+    public TextMeshPro highScoreUI;
+    public int highScore;
+
+    public PeriodicTableLoader periodicTableLoader;
 
 
     public void Awake()
@@ -33,7 +51,10 @@ public class UIManager : MonoBehaviour
         isGameRunning = true;
         startButton.SetActive(false);
         gameMode.SetActive(true);
+        highScore = PlayerPrefs.GetInt("HighScore");
+        highScoreUI.text = highScore.ToString();
         timer.StartScoreCount();
+        GetQuestion();
     }
 
     public void EndGame()
@@ -42,6 +63,32 @@ public class UIManager : MonoBehaviour
         gameMode.SetActive(false);
         startButton.SetActive(true);
         timer.StopTimer();
+        if(timer.score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", timer.score);
+        }
+        elementList.Clear();
+        periodicTableLoader.InitializeData();
+    }
+
+    public void GetQuestion()
+    {
+        questionNumber = Random.Range(0, elementList.Count);
+        question = elementList[questionNumber];
+        questionUI.text = question;
+        elementList.RemoveAt(questionNumber);        
+    }
+
+    public void PopUpResult()
+    {
+        resultUI.SetActive(true);
+        StartCoroutine("PopUpDelay");
+    }
+
+    IEnumerator PopUpDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        resultUI.SetActive(false);
     }
 
     public void AddScore()

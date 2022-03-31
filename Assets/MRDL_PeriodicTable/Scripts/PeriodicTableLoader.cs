@@ -127,8 +127,8 @@ namespace HoloToolkit.MRDL.PeriodicTable
                     existingElementObject.localRotation = Quaternion.identity;
                     i++;
                 }
-                Parent.localPosition = new Vector3(0.0f, -0.7f, 0.7f);
-                LegendTransform.localPosition = new Vector3(0.0f, 0.15f, 1.8f);
+                Parent.localPosition = new Vector3(0.0f, -0.7f, 0.5f);
+                LegendTransform.localPosition = new Vector3(0.01f, 0.294f, 1.8f);
 
             }
         }

@@ -57,6 +57,24 @@ namespace HoloToolkit.MRDL.PeriodicTable
             UIManager.Instance.returnedElementNumber = DataAtomicNumber.text.ToString();
             UIManager.Instance.returnedElementShortForm = ElementName.text.ToString();
             UIManager.Instance.returnedElementName = ElementNameDetail.text.ToString();
+
+
+            if(UIManager.Instance.question == ElementNameDetail.text.ToString())
+            {
+                UIManager.Instance.GetQuestion();
+                UIManager.Instance.AddScore();
+                UIManager.Instance.resultUIText.text = "Correct! +100";
+                UIManager.Instance.resultUIText.color = Color.green;
+                UIManager.Instance.PopUpResult();
+            }
+
+            else
+            {
+                UIManager.Instance.SubtractScore();
+                UIManager.Instance.resultUIText.text = "InCorrect! -50";
+                UIManager.Instance.resultUIText.color = Color.red;
+                UIManager.Instance.PopUpResult();
+            }
         }
 
         public void Start()
@@ -186,6 +204,8 @@ namespace HoloToolkit.MRDL.PeriodicTable
 
             // Set our name so the container can alphabetize
             transform.parent.name = data.name;
+
+            UIManager.Instance.elementList.Add(ElementNameDetail.text.ToString());
         }
     }
 
