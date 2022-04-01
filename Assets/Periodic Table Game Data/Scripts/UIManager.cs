@@ -76,6 +76,7 @@ public class UIManager : MonoBehaviour
         if(timer.score > highScore)
         {
             PlayerPrefs.SetInt("HighScore", timer.score);
+            highScoreUI.text = timer.score.ToString();
         }
         elementList.Clear();
         periodicTableLoader.InitializeData();
