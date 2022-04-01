@@ -45,16 +45,26 @@ public class UIManager : MonoBehaviour
         timer = GetComponent<Timer>();
     }
 
+    public void Start()
+    {
+        SetHighScore();
+    }
+
+    public void SetHighScore()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore");
+        highScoreUI.text = highScore.ToString();
+    }
 
     public void StartGame()
     {
         isGameRunning = true;
         startButton.SetActive(false);
         gameMode.SetActive(true);
-        highScore = PlayerPrefs.GetInt("HighScore");
-        highScoreUI.text = highScore.ToString();
+        
         timer.StartScoreCount();
         GetQuestion();
+        SetHighScore();
     }
 
     public void EndGame()
