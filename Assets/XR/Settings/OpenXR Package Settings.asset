@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
+  - {fileID: 7492651195984550589}
   - {fileID: -8080006659516941583}
   - {fileID: -1523378851991797913}
   - {fileID: -3955738365671212986}
@@ -449,14 +450,12 @@ MonoBehaviour:
   - {fileID: 2737944497628519952}
   - {fileID: 4233371235136877077}
   - {fileID: 5200602021291830589}
-  - {fileID: -1529936464036153044}
   - {fileID: 6248767051485404418}
   - {fileID: -4201959790040587220}
   - {fileID: 1804242986600525715}
+  - {fileID: -8010826608525783396}
   - {fileID: 107171104713044766}
   - {fileID: 3829999816715368137}
-  - {fileID: -8010826608525783396}
-  - {fileID: 7492651195984550589}
   m_renderMode: 1
   m_depthSubmissionMode: 2
 --- !u!114 &-3531816234273055174
@@ -549,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -610,6 +609,7 @@ MonoBehaviour:
   m_Name: MockDriver Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Mock Driver
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.mockdriver
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f928d0d73a35f294fbe357ca17aa3547, type: 3}
   m_Name: MicrosoftHandInteraction Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Microsoft Hand Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.handtracking
@@ -1145,8 +1145,8 @@ MonoBehaviour:
   - {fileID: 5727031132682328225}
   - {fileID: 6664832614684668907}
   - {fileID: -6362560391384000256}
-  - {fileID: -1781519894458698871}
   - {fileID: 8793488212261005978}
+  - {fileID: -1781519894458698871}
   - {fileID: -8816675966655309002}
   m_renderMode: 1
   m_depthSubmissionMode: 0
@@ -1486,20 +1486,20 @@ MonoBehaviour:
   m_Name: WSA
   m_EditorClassIdentifier: 
   features:
+  - {fileID: -3082921921128043911}
   - {fileID: 5426097526174033560}
   - {fileID: 7737223038688425618}
+  - {fileID: 1257454731781779098}
+  - {fileID: -5776638503993594204}
   - {fileID: -1340647345642052464}
   - {fileID: -513085131582087943}
   - {fileID: 5882035929537382843}
   - {fileID: 2591933779672528837}
-  - {fileID: 874725912947068808}
-  - {fileID: -4217308298027182522}
-  - {fileID: -5776638503993594204}
-  - {fileID: 1257454731781779098}
   - {fileID: -2755137147701067174}
   - {fileID: 7505846696256824551}
-  - {fileID: -3082921921128043911}
+  - {fileID: 874725912947068808}
   - {fileID: -1051876709438480377}
+  - {fileID: -4217308298027182522}
   m_renderMode: 1
   m_depthSubmissionMode: 1
 --- !u!114 &5882035929537382843
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef793c31862a37448e907829482ef80, type: 3}
   m_Name: OculusQuestFeature Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Quest Support
   version: 1.0.0
   featureIdInternal: com.unity.openxr.feature.oculusquest
